@@ -1,12 +1,11 @@
-﻿-- 1. Novos usuários na última semana
-SELECT 
+﻿SELECT 
     COUNT(id) AS novos_usuarios_semana_passada
 FROM 
     customers
 WHERE 
     created_at >= CURRENT_DATE - INTERVAL '7 days';
-
--- 2. Produto mais vendido nos últimos 30 dias
+    
+-- Produto mais vendido nos últimos 30 dias (entregues)
 SELECT 
     p.id AS produto_id,
     p.name AS produto_nome,
@@ -28,7 +27,7 @@ ORDER BY
     total_unidades_vendidas DESC
 LIMIT 1;
 
--- 3. Top 5 clientes mais valiosos
+-- Top 5 clientes mais valiosos
 SELECT 
     c.id AS cliente_id,
     c.name AS cliente_nome,
@@ -47,7 +46,7 @@ ORDER BY
     total_gasto DESC
 LIMIT 5;
 
--- 4. Faturamento e ticket médio por categoria
+-- Faturamento e ticket médio por categoria
 SELECT 
     p.category AS categoria,
     COUNT(DISTINCT o.id) AS quantidade_pedidos,
@@ -67,7 +66,7 @@ GROUP BY
 ORDER BY 
     receita_total DESC;
 
--- 5. Clientes inativos (sem compras)
+-- Clientes inativos (cadastrados sem nenhuma compra)
 SELECT 
     c.id AS cliente_id,
     c.name AS cliente_nome,
@@ -82,7 +81,7 @@ WHERE
 ORDER BY 
     c.created_at ASC;
 
--- 6. Distribuição por status de pedido
+-- Distribuição de volume e receita por status de pedido
 SELECT 
     status,
     COUNT(id) AS total_pedidos,
