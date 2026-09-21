@@ -1,60 +1,31 @@
-\# 📊 E-Commerce SQL Analytics \& Business Insights
+# 📊 E-Commerce SQL Analytics & Business Insights
 
+Projeto prático de modelagem relacional e análise de dados utilizando **SQL ANSI**. O objetivo é responder a perguntas estratégicas de negócio de uma operação de e-commerce, extraindo métricas de crescimento, retenção e faturamento.
 
+---
 
-Projeto prático de modelagem relacional e análise de dados utilizando \*\*SQL ANSI\*\*. O objetivo é responder a perguntas estratégicas de negócio de uma operação de e-commerce, extraindo métricas de crescimento, retenção e faturamento.
+## 🎯 Conceitos e Comandos Utilizados
 
+- **Consultas & Filtros:** `SELECT`, `FROM`, `WHERE`
+- **Relacionamentos:** `INNER JOIN`, `LEFT JOIN` (identificação de clientes sem conversão)
+- **Agrupamentos & Agregações:** `GROUP BY`, `COUNT`, `SUM`, `AVG`, `ROUND`
+- *Ordenação & Limites:** `ORDER BY (ASC / DESC)`, `LIMIT`
+- **Filtros Temporais\** Intervalos dinâmicos (`INTERVAL`, `CURRENT_DATE`)
 
+---
 
-\---
-
-
-
-\## 🎯 Conceitos e Comandos Utilizados
-
-
-
-\- \*\*Consultas \& Filtros:\*\* `SELECT`, `FROM`, `WHERE`
-
-\- \*\*Relacionamentos:\*\* `INNER JOIN`, `LEFT JOIN` (identificação de clientes sem conversão)
-
-\- \*\*Agrupamentos \& Agregações:\*\* `GROUP BY`, `COUNT`, `SUM`, `AVG`, `ROUND`
-
-\- \*\*Ordenação \& Limites:\*\* `ORDER BY (ASC / DESC)`, `LIMIT`
-
-\- \*\*Filtros Temporais:\*\* Intervalos dinâmicos (`INTERVAL`, `CURRENT\_DATE`)
-
-
-
-\---
-
-
-
-\## 🗄️ Modelo Relacional
-
-
+## 🗄️ Modelo Relacional
 
 O schema simula 4 tabelas relacionais com chaves primárias (`PRIMARY KEY`) e integridade referencial (`FOREIGN KEY`):
 
+- **`customers`**: Cadastro de clientes e data de adesão.
+- **`products`**: Catálogo de itens e categorias.
+- **`orders`**: Registro de pedidos, status e valor total.
+- **`order_items`**: Detalhamento dos itens vinculados a cada pedido.
 
+---
 
-\- \*\*`customers`\*\*: Cadastro de clientes e data de adesão.
-
-\- \*\*`products`\*\*: Catálogo de itens e categorias.
-
-\- \*\*`orders`\*\*: Registro de pedidos, status e valor total.
-
-\- \*\*`order\_items`\*\*: Detalhamento dos itens vinculados a cada pedido.
-
-
-
-\---
-
-
-
-\## 💼 Perguntas de Negócio Respondidas
-
-
+## 💼 Perguntas de Negócio Respondidas
 
 | # | Pergunta de Negócio | Comandos Chave |
 
@@ -72,29 +43,14 @@ O schema simula 4 tabelas relacionais com chaves primárias (`PRIMARY KEY`) e in
 
 | 6 | Qual a distribuição de receita por status de pedido? | `GROUP BY`, `COUNT`, `SUM` |
 
+---
 
+## 🚀 Como Executar
 
-\---
+### Pré-requisitos
+- PostgreSQL, MySQL ou qualquer cliente SQL (DBeaver, pgAdmin, DataGrip ou terminal).
 
-
-
-\## 🚀 Como Executar
-
-
-
-\### Pré-requisitos
-
-\- PostgreSQL, MySQL ou qualquer cliente SQL (DBeaver, pgAdmin, DataGrip ou terminal).
-
-
-
-\### Execução
-
-1\. Execute o script `sql/01\_schema.sql` para criar a estrutura das tabelas.
-
-2\. Execute `sql/02\_seed\_data.sql` para popular a base com registros de teste.
-
-3\. Execute `sql/03\_business\_queries.sql` para visualizar as respostas analíticas.
-
-
-
+### Execução
+1. Execute o script `sql/01_schema.sql` para criar a estrutura das tabelas.
+2. Execute `sql/02_seed_data.sql` para popular a base com registros de teste.
+3. Execute `sql/03_business_queries.sql` para visualizar as respostas analíticas.
